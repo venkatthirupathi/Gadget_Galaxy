@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="loginstyles.css">
+</head>
+<body>
+    <form id="loginForm">
+        <div class="signin">
+            <div class="container">
+                <h1 style="text-align: center;">Login</h1>
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+                <button type="submit">Login</button>
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
+                <a href="signup.html" style="text-decoration: none;color: white;">
+                    <button type="button" class="cancelbtn" style="color: black;">Cancel</button>
+                </a>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loggedInUser = localStorage.getItem('loggedInUser');
+            if (loggedInUser) {
+                alert('User signed in successfully');
+                window.location.href = 'index.html';
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('uname').value;
+            const password = document.getElementById('psw').value;
+            const storedPassword = localStorage.getItem(username);
+
+            if (storedPassword && storedPassword === password) {
+                localStorage.setItem('loggedInUser', username);
+                alert('Login successful');
+                window.location.href = 'index.html';
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+    </script>
+</body>
+</html>

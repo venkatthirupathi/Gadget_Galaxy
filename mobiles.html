@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobiles</title>
+    <link rel="stylesheet" href="level1style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="myScript.js"></script>
+    <!-- <style>
+        .dabba {
+          background: #b8c6d3;
+          padding: 1.6rem;
+          gap: 1rem;
+          display: flex;
+          color: black;
+          font-size: 1.4vw;
+      }
+      .dabba .s1 .s2 {
+          color: black;
+          font-size: 1.3rem;
+      }
+      
+       .mb10 a {
+           color: #212529;
+          text-decoration: none;
+      }
+  
+  </style> -->
+</head>
+<body>
+    <h1>Mobiles</h1>
+    <div class="main-content">
+        <div class="product">
+            <img src="images/mob1.webp" alt="mob1" class="mob-img">
+        </div>
+        <div class="product-info">
+            <h3>Apple iPhone 15 Plus (256 GB, 6.7 Inches) - Black</h3>
+            <h2>₹89,900</h2> 
+            <p>M.R.P: <strike>₹99,900</strike>(10% off)</p>
+            <button onclick="addToCart('iPhone', 89900)">Add to cart</button>
+        </div>
+        <div class="product">
+            <img src="images/samsunggalaxy.avif" alt="mob1" class="mob-img">
+        </div>
+        <div class="product-info">
+            <h3>Samsung Galaxy A34 5G (128 GB) - Awesome </h3>
+            <h2>₹24,499</h2> 
+            <p>M.R.P: <strike>₹35,499</strike>(31% off)</p>
+            <button onclick="addToCart('Samsung', 24499)">Add to cart</button>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="product">
+            <img src="images/Xiaomi.webp" alt="mob1" class="mob-img">
+        </div>
+        <div class="product-info">
+            <h3>Xiaomi 14 Pro (12GB + 16GB RAM, 256GB + 512GB + 1TB Storage)</h3>
+            <h2>₹48,290</h2> 
+            <p>M.R.P: <strike>₹56,900</strike>(11% off)</p>
+            <button onclick="addToCart('Xiaomi', 48290)">Add to cart</button>
+        </div>
+        <div class="product">
+            <img src="images/oppo.avif" alt="mob1" class="mob-img">
+        </div>
+        <div class="product-info">
+            <h3>Oppo Reno 10 Pro+ 5G (12GB RAM, 256GB ROM, 4700mAh Battery)</h3>
+            <h2>₹49,760</h2> 
+            <p>M.R.P: <strike>₹51,900</strike>(13% off)</p>
+            <button onclick="addToCart('Oppo', 49760)">Add to cart</button>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="product">
+            <img src="images/motorola.avif" alt="mob1" class="mob-img">
+        </div>
+        <div class="product-info">
+            <h3>Motorola Razr 40 Ultra (256 GB) - Black</h3>
+            <h2>₹69,999</h2> 
+            <p>M.R.P: <strike>₹1,19,999</strike>(42% off)</p>
+            <button onclick="addToCart('Motorola', 69999)">Add to cart</button>
+        </div>
+        <div class="product">
+            <img src="images/honor.avif" alt="mob1" class="mob-img">
+        </div>
+            <div class="product-info">
+                <h3>Honor 90 5G (512 GB Storage, 66W Fast Charging, 12GB RAM)</h3>
+                <h2>₹49,999</h2> 
+                <p>M.R.P: <strike>₹56,900</strike>(12% off)</p>
+                <button onclick="addToCart('Honor', 49999)">Add to cart</button>
+            </div>
+    </div>
+    <div class="main-content">
+        <div class="product">
+            <img src="images/poco.avif" alt="mob1" class="mob-img">
+        </div>
+        <div class="product-info">
+            <h3>POCO F5 5G (12GB RAM, 256GB, 6.67 inch, 5000mAh Battery)</h3>
+            <h2>₹33,999</h2> 
+            <p>M.R.P: <strike>₹38,200</strike>(11% off)</p>
+            <button onclick="addToCart('Poco', 33999)">Add to cart</button>
+        </div>
+        <div class="product">
+            <img src="images/iqooz7.avif" alt="mob1" class="mob-img">
+        </div>
+        <div class="product-info">
+            <h3>iQOO Z7 5G (Norway Blue, 8GB RAM, 128GB Storage)</h3>
+            <h2>₹22,999</h2> 
+            <p>M.R.P: <strike>₹25,999</strike>(27% off)</p>
+            <button onclick="addToCart('iQoo', 22999)">Add to cart</button>
+        </div>
+    </div> 
+    <div class="main-content" style=" margin-top:10px ;display:flex; justify-content: space-between;">
+        <h2>Shopping Cart <i class="fa-solid fa-cart-shopping"></i></h2>
+        <div id="cart-items" style="display: flex;justify-content: space-between;"></div>
+        <p>Total Price: Rs<span id="total-price" style="margin:15px;">0.00</span></p>
+
+    </div>
+    <div class="main-content" style="height: 50px;">
+            
+        <button onclick="bookCart()" style="background-color: blue;">Book Cart</button>
+            
+            <p id="booking-message"></p>
+            
+    </div>
+              
+    <div class="main-content booked-items" style="display: flex; justify-content: space-between; margin-top: 10px;">
+            
+            <h2>Booked Items</h2>
+            
+            <div id="booked-items" style="display: flex;justify-content: space-between;margin: 15px;"></div>
+            
+    </div> 
+            
+    <footer>
+        <a href="#">
+        <div class="foot-panel1">
+            Back to top
+        </div> </a>
+        <a href="index.html"><div class="foot-panel3"><i class="fa-solid fa-house"></i></div></a>
+       </footer>
+</body>
+</html>
+
